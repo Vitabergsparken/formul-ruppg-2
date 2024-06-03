@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Registration page</title>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <div class="logoWrapper">
+            <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/NK_Logo_1.svg" alt="Nk logotyp">
+        </div>
+        <div class="formHeading">
+            <h3>BLI NYCKELMEDLEM</h3>
+        </div>
+
+        <form action="https://httpbin.org/anything" method="post" class="form">
+            <div class="form-group">
+                <label for="firstName">FÖRNAMN</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Fyll i förnamn">
+            </div>
+            <div class="form-group">
+                <label for="surName">EFTERNAMN</label>
+                <input type="text" id="surName" name="surName" placeholder="Fyll i efternamn">
+            </div>
+            <div class="form-group">
+                <label for="mobileNumber">MOBILNUMMER</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" placeholder="Fyll i mobilnummer"
+                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
+            </div>
+            <div class="form-group">
+                <label for="personalNumber">PERSONNUMMER</label>
+                <input type="number" id="personalNumber" name="personalNumber" placeholder="Fyll i personnummer">
+            </div>
+            <div class="form-group">
+                <label for="email">E-POSTADRESS</label>
+                <input type="email" id="email" name="email" placeholder="Fyll i E-postadress" required
+                    aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="password">LÖSENORD</label>
+                <input type="password" id="password" name="password" placeholder="Fyll i lösenord" required
+                    aria-required="true">
+            </div>
+            <div class="form-group">
+                <label for="repeatPassword">REPETERA LÖSENORD</label>
+                <input type="password" id="repeatPassword" name="repeatPassword" placeholder="Repetera lösenord"
+                    required aria-required="true">
+            </div>
+            <div class="form-group-checkbox">
+                <input type="checkbox" id="checkbox" name="checkbox" onclick="showPassword()">
+                <label for="checkbox">VISA LÖSENORD</label>
+            </div>
+
+            <h4>VARUHUSTILLHÖRIGHET</h4>
+            <div class="form-group-radiobuttons">
+                <input type="radio" id="stockholm" name="stockholm" value="HTML">
+                <label for="stockholm">Stockholm</label>
+                <input type="radio" id="gothenburg" name="gothenburg" value="CSS">
+                <label for="gothenburg">Göteborg</label>
+            </div>
+            <div class="form-group">
+                <label for="terms">GODKÄNNS MEDLEMSVILLKOR</label>
+                <input type="checkbox" id="terms" name="terms" required aria-required="true">
+                <span>Jag har tagit del av och godkänner <a target="_blank"
+                        href="www.nk.se/nk-nyckeln/nk-nyckeln-villkor">medlemsvillkoren</a> för medlemskap
+                    i NK Nyckeln. Glöm inte att verifiera och bekräfta ditt medlemskap inom 14 dagar.</span>
+            </div>
+            <div class="submitWrapper">
+                <input type="submit" class="submitButton" value="REGISTRERA" tabindex=0 />
+            </div>
+
+        </form>
+        <div class="membership">
+            <h3>BLI EN DEL AV OSS</h3>
+            <div class="membershipContent">
+                <ul>
+                    <li>Poäng på alla köp</li>
+                    <li>Förmåner och personliga erbjudanden</li>
+                    <li>Förtur till vår realisation</li>
+                    <li>Inbjudningar till Nyckelkvällar</li>
+                    <li>Fri frakt på nk.se</li>
+                </ul>
+            </div>
+            <a class="memberLink" href="www.nk.se/nk-nyckeln/nk-nyckeln-villkor">Läs mer om medlemskapet</a>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    function showPassword() {
+        var password = document.getElementById('password');
+        var repeatPassword = document.getElementById('repeatPassword');
+        if (password.type == 'password') {
+            password.type = 'text';
+        }
+        if (repeatPassword.type == 'password') {
+            repeatPassword.type = 'text';
+        }
+        else {
+            password.type = 'password';
+            repeatPassword.type = 'password';
+        }
+    }
+</script>
+
+</html>
